@@ -6,22 +6,29 @@ import { RouterModule, Routes } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ViewTrainsComponent } from './view-trains/view-trains.component';
+import { ViewAllTrainsComponent } from './view-all-trains/view-all-trains.component';
+import { HttpClientModule } from '@angular/common/http';
 
 const appRoutes:Routes = [
   {
-    path:"",component:ViewTrainsComponent
+    path:"view",component:ViewTrainsComponent
+  },
+  {
+    path:"",component:ViewAllTrainsComponent
   }
 ]
 
 @NgModule({
   declarations: [
     AppComponent,
-    ViewTrainsComponent
+    ViewTrainsComponent,
+    ViewAllTrainsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes),
+    HttpClientModule,
     FormsModule
   ],
   providers: [],
